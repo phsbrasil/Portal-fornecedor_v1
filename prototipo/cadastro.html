@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multitex — Cadastro de Fornecedor (Mockup)</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="cadastro.css">
+  <link rel="stylesheet" href="gestao.css">
+</head>
+<body>
+  <div id="chrome"></div>
+
+  <div class="page">
+    <div class="crumb">Gestão de Fornecedores › Cadastros › Fornecedor</div>
+    <h1>Cadastro de Fornecedor <span class="tag">MOCKUP — validação</span></h1>
+
+    <div class="stepper" id="stepper"></div>
+
+    <!-- Origem / tipo -->
+    <div class="form-card">
+      <div class="hd"><h3><span class="num">0</span> Origem do cadastro</h3></div>
+      <div class="grid">
+        <div class="fld c6">
+          <label>Carregar fornecedor existente do TOTVS <span class="ro">SA2 · leitura</span></label>
+          <select id="totvsSel"><option value="">— Novo fornecedor (preencher no 365) —</option></select>
+          <span class="hint">Cadastros anteriores à data de corte vêm do TOTVS (somente leitura). Novos são criados no 365.</span>
+        </div>
+        <div class="fld c6">
+          <label>Tipo de terceiro <span class="req">*</span></label>
+          <select id="tipoTerceiro">
+            <option>Contrato (dia a dia)</option>
+            <option>Spot / pontual</option>
+          </select>
+          <span class="hint">Terceiro recorrente (com contrato) ou prestação pontual.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Identificação -->
+    <div class="form-card">
+      <div class="hd"><h3><span class="num">1</span> Identificação</h3><span class="origem o365" id="org1">Complemento 365</span></div>
+      <div class="grid">
+        <div class="fld c5">
+          <label>CNPJ <span class="req">*</span></label>
+          <div class="inline-btn"><input id="cnpj" placeholder="00.000.000/0000-00">
+            <button class="btn-busca" id="btnCnpj">Buscar na Receita</button></div>
+          <span class="hint">Autopreenche razão social e endereço via consulta pública da Receita.</span>
+        </div>
+        <div class="fld c7"><label>Razão social <span class="req">*</span></label><input id="razao" placeholder="Razão social"></div>
+        <div class="fld c6"><label>Nome fantasia</label><input id="fantasia" placeholder="Nome fantasia"></div>
+        <div class="fld c3"><label>Inscrição estadual</label><input id="ie" placeholder="IE"></div>
+        <div class="fld c3"><label>Inscrição municipal</label><input id="im" placeholder="IM"></div>
+      </div>
+    </div>
+
+    <!-- Endereço -->
+    <div class="form-card">
+      <div class="hd"><h3><span class="num">2</span> Endereço</h3><span class="origem o365">Complemento 365</span></div>
+      <div class="grid">
+        <div class="fld c3"><label>CEP</label><div class="inline-btn"><input id="cep" placeholder="00000-000">
+          <button class="btn-busca" id="btnCep">Buscar</button></div></div>
+        <div class="fld c7"><label>Logradouro</label><input id="logradouro"></div>
+        <div class="fld c2"><label>Número</label><input id="numero"></div>
+        <div class="fld c4"><label>Complemento</label><input id="compl"></div>
+        <div class="fld c4"><label>Bairro</label><input id="bairro"></div>
+        <div class="fld c3"><label>Município</label><input id="municipio"></div>
+        <div class="fld c1" style="grid-column:span 1"><label>UF</label><input id="estado" maxlength="2"></div>
+      </div>
+    </div>
+
+    <!-- Contato -->
+    <div class="form-card">
+      <div class="hd"><h3><span class="num">3</span> Contato</h3></div>
+      <div class="grid">
+        <div class="fld c2"><label>DDD</label><input id="ddd" maxlength="3"></div>
+        <div class="fld c3"><label>Telefone</label><input id="tel"></div>
+        <div class="fld c4"><label>E-mail <span class="req">*</span></label><input id="email" placeholder="contato@fornecedor.com.br"></div>
+        <div class="fld c3"><label>Contato responsável</label><input id="contato"></div>
+      </div>
+    </div>
+
+    <!-- Classificação -->
+    <div class="form-card">
+      <div class="hd"><h3><span class="num">4</span> Classificação</h3></div>
+      <div class="grid">
+        <div class="fld c3"><label>Tipo</label><select id="tipoPS"><option>Serviço</option><option>Produto</option><option>Serviço + Produto</option></select></div>
+        <div class="fld c6"><label>Categoria do fornecedor <span class="req">*</span></label><select id="categoria"><option value="">— Selecione —</option></select>
+          <span class="hint">Define automaticamente os documentos obrigatórios (seção 6).</span></div>
+        <div class="fld c3"><label>Nível <span class="ro">automático</span></label><input id="nivel" readonly placeholder="—"></div>
+        <div class="fld c4"><label>Condição de pagamento</label><select id="condPag"><option>À vista</option><option>28 dias</option><option>28/35/42 dias</option><option>Conforme contrato</option></select></div>
+        <div class="fld c4"><label>Centro de custo</label><input id="cc" placeholder="Ex.: OZ-01"></div>
+        <div class="fld c4"><label>Gestor responsável</label><input id="gestor" placeholder="Área / responsável"></div>
+      </div>
+    </div>
+
+    <!-- Fiscal -->
+    <div class="form-card">
+      <div class="hd"><h3><span class="num">5</span> Enquadramento fiscal</h3><span class="origem totvs" id="org5">Dados TOTVS</span></div>
+      <div class="grid">
+        <div class="fld c3"><label>Tipo de pessoa</label><select id="tipoPessoa"><option>Jurídica</option><option>Física</option></select></div>
+        <div class="fld c3"><label>Optante Simples Nacional</label><select id="simples"><option>Não</option><option>Sim</option></select></div>
+        <div class="fld c3"><label>Recolhe ISS</label><select id="iss"><option>Não</option><option>Sim</option></select></div>
+        <div class="fld c3"><label>Porte / Tipo PJ</label><select id="porte"><option>Não informado</option><option>Micro empresa</option><option>Empresa de pequeno porte</option><option>Não optante</option></select></div>
+      </div>
+    </div>
+
+    <!-- Documentos exigidos (condicional) -->
+    <div class="form-card">
+      <div class="hd"><h3><span class="num">6</span> Documentos obrigatórios da categoria</h3></div>
+      <div class="reqbox" id="reqbox"><div class="empty">Selecione uma <b>categoria</b> na seção 4 para ver os documentos exigidos e suas vigências.</div></div>
+    </div>
+
+    <div class="actions">
+      <button class="btn-ghost" id="btnRascunho">Salvar rascunho</button>
+      <button class="btn-primary" id="btnEnviar">Enviar para aprovação</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="dados.js"></script>
+  <script src="chrome.js"></script>
+  <script src="cadastro.js"></script>
+</body>
+</html>

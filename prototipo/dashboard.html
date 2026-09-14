@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multitex — Painel do Gestor (Mockup)</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="cadastro.css">
+  <link rel="stylesheet" href="gestao.css">
+</head>
+<body>
+  <div id="chrome"></div>
+  <div class="page" style="max-width:1120px">
+    <h1>Painel do Gestor <span class="tag">MOCKUP — validação</span></h1>
+    <p class="subtitle">Visão consolidada da gestão de terceiros — conformidade, vencimentos, aprovações e contratos.</p>
+
+    <div class="kpis" id="kpis"></div>
+
+    <div class="card"><div class="hd"><h3>Conformidade documental por fornecedor</h3>
+      <a class="btn-sm primary" href="cadastro.html">+ Novo fornecedor</a></div>
+      <div class="bd"><table class="tbl" id="tbConf"></table></div>
+    </div>
+
+    <div class="two-col" style="margin-top:1.2rem">
+      <div class="card"><div class="hd"><h3>Aprovações pendentes</h3><a class="btn-sm" href="aprovacoes.html">Abrir central</a></div>
+        <div class="bd"><table class="tbl" id="tbAprov"></table></div></div>
+      <div class="card"><div class="hd"><h3>Contratos a vencer</h3><a class="btn-sm" href="contratos.html">Ver contratos</a></div>
+        <div class="bd"><table class="tbl" id="tbContr"></table></div></div>
+    </div>
+  </div>
+  <div class="foot" style="max-width:1120px;margin:0 auto">© 2026 Multitex Logística · Gestão de Fornecedores</div>
+
+  <script src="dados.js"></script>
+  <script src="chrome.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

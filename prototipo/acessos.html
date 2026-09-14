@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multitex — Gestão de Acessos (Mockup)</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="cadastro.css">
+  <link rel="stylesheet" href="gestao.css">
+</head>
+<body>
+  <div id="chrome"></div>
+  <div class="page" style="max-width:1080px">
+    <h1>Gestão de Acessos <span class="tag">MOCKUP — validação</span></h1>
+    <p class="subtitle">Três níveis de acesso às informações e bibliotecas de documentos. A ser detalhado na call com a Controladoria.</p>
+
+    <div class="hub-grid" style="margin-bottom:1.4rem">
+      <div class="hub-card" style="cursor:default"><div class="ic">👑</div><h3>Acesso total</h3>
+        <p>Gestão de tudo — enxerga todos os fornecedores, contratos, documentos e bibliotecas. Ex.: Suprimentos / Controladoria.</p></div>
+      <div class="hub-card" style="cursor:default"><div class="ic">🏷️</div><h3>Por grupo / centro de custo</h3>
+        <p>Enxerga apenas os itens do(s) centro(s) de custo ou grupo de segurança associados ao usuário.</p></div>
+      <div class="hub-card" style="cursor:default"><div class="ic">👤</div><h3>Operacional (nominal)</h3>
+        <p>Acessa somente aquilo em que a pessoa está nominalmente envolvida (tarefa/documento específico).</p></div>
+    </div>
+
+    <div class="list-toolbar"><div class="filters"><b style="font-size:.95rem">Usuários e grupos</b></div>
+      <button class="btn-primary" onclick="mtxToast('Mockup: aqui abre o cadastro de acesso (usuário/grupo, nível e escopo).')">+ Novo acesso</button></div>
+
+    <div class="card"><div class="bd"><table class="tbl">
+      <thead><tr><th>Usuário / Grupo</th><th>Perfil</th><th>Nível</th><th>Escopo</th><th>Bibliotecas / áreas</th></tr></thead>
+      <tbody>
+        <tr><td class="doc">Grupo · Suprimentos</td><td>Gestor</td><td><span class="scope total">Acesso total</span></td><td>Todos os fornecedores</td><td>Todas</td></tr>
+        <tr><td class="doc">Grupo · Fiscal</td><td>Validador</td><td><span class="scope total">Acesso total</span></td><td>Todos os fornecedores</td><td>Fiscal / Regularidade, Contratual</td></tr>
+        <tr><td class="doc">Marina Andrade</td><td>Coordenação</td><td><span class="scope cc">Centro de custo</span></td><td>CC OZ-01, OZ-02</td><td>Fornecedores dos CCs</td></tr>
+        <tr><td class="doc">Grupo · DP</td><td>Validador</td><td><span class="scope total">Acesso total</span></td><td>Todos os fornecedores</td><td>Trabalhista, SST/SSMA</td></tr>
+        <tr><td class="doc">Operador · Filial Serra</td><td>Operacional</td><td><span class="scope op">Operacional</span></td><td>Itens nominais</td><td>Somente designados</td></tr>
+        <tr><td class="doc">Fornecedor · Órion Facilities</td><td>Externo (Portal)</td><td><span class="scope op">Operacional</span></td><td>Própria pasta</td><td>Somente os próprios documentos</td></tr>
+      </tbody>
+    </table></div></div>
+
+    <div class="card" style="margin-top:1.2rem"><div class="hd"><h3>Bibliotecas × grupos de segurança</h3></div>
+      <div class="bd"><table class="tbl">
+        <thead><tr><th>Biblioteca / família</th><th>Grupos com acesso</th><th>Confidencialidade</th></tr></thead>
+        <tbody>
+          <tr><td class="doc">Fiscal / Regularidade</td><td>Suprimentos, Fiscal</td><td><span class="badge b-neutral">Padrão</span></td></tr>
+          <tr><td class="doc">Trabalhista</td><td>Suprimentos, DP</td><td><span class="badge b-warn">Restrito</span></td></tr>
+          <tr><td class="doc">SST / SSMA</td><td>Suprimentos, DP, SESMT</td><td><span class="badge b-warn">Restrito</span></td></tr>
+          <tr><td class="doc">Contratual / Seguros</td><td>Suprimentos, Fiscal, Controladoria</td><td><span class="badge b-danger">Confidencial</span></td></tr>
+        </tbody>
+      </table></div></div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="chrome.js"></script>
+  <script>let _t;function mtxToast(m){const t=document.getElementById('toast');t.innerHTML=m;t.classList.add('show');clearTimeout(_t);_t=setTimeout(()=>t.classList.remove('show'),3200);}</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multitex — Auditoria (Mockup)</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="cadastro.css">
+  <link rel="stylesheet" href="gestao.css">
+</head>
+<body>
+  <div id="chrome"></div>
+  <div class="page" style="max-width:920px">
+    <h1>Auditoria / Histórico <span class="tag">MOCKUP — validação</span></h1>
+    <p class="subtitle">Trilha completa e imutável: envios, aprovações, recusas, alterações de vigência e de contrato — com autor e data.</p>
+
+    <div class="list-toolbar">
+      <div class="filters">
+        <select id="ftipo"><option value="">Todos os eventos</option><option>Aprovação</option><option>Recusa</option><option>Envio</option><option>Alteração</option></select>
+        <input id="q" placeholder="Buscar por fornecedor, usuário…">
+      </div>
+      <button class="btn-ghost" onclick="mtxToast('Mockup: exportação da trilha de auditoria (CSV/PDF).')">Exportar</button>
+    </div>
+
+    <div class="card"><div class="bd" style="padding:1.2rem"><div class="timeline" id="tl"></div></div></div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="chrome.js"></script>
+  <script>
+  const EVENTOS = [
+    {q:'14/09/2026 09:12', tipo:'Recusa', cls:'no', quem:'Fiscal · João', txt:'<b>Recusou</b> NF-e 004430 de <b>Vega Inspeções</b>', meta:'Motivo: imposto ISS divergente'},
+    {q:'14/09/2026 08:40', tipo:'Aprovação', cls:'ok', quem:'DP · Marta', txt:'<b>Aprovou</b> Ficha de registro (CTPS) de <b>Órion Facilities</b>', meta:'Etapa DP concluída'},
+    {q:'13/09/2026 17:55', tipo:'Envio', cls:'', quem:'Fornecedor · Órion Facilities', txt:'<b>Enviou</b> NF-e 004512 (R$ 18.400,00)', meta:'Aguardando validação Fiscal → Financeiro'},
+    {q:'13/09/2026 15:20', tipo:'Alteração', cls:'', quem:'Suprimentos · Ana', txt:'<b>Alterou vigência</b> de "ASO" para 12 meses na matriz', meta:'Categoria: Adm. com Cessão'},
+    {q:'12/09/2026 11:03', tipo:'Aprovação', cls:'ok', quem:'Financeiro · Rafael', txt:'<b>Aprovou</b> análise financeira de <b>Contábil Prima</b>', meta:'Cadastro habilitado'},
+    {q:'12/09/2026 10:15', tipo:'Envio', cls:'', quem:'Fornecedor · Sigma Lubrificantes', txt:'<b>Enviou</b> CRLV do equipamento', meta:'Aguardando Suprimentos'},
+    {q:'11/09/2026 16:48', tipo:'Alteração', cls:'', quem:'Suprimentos · Ana', txt:'<b>Dispensou</b> "Matrícula CNO/CEI" para <b>Delta Ferragens</b>', meta:'Exceção à matriz (config. do fornecedor)'},
+    {q:'10/09/2026 09:30', tipo:'Recusa', cls:'no', quem:'SESMT · Paulo', txt:'<b>Recusou</b> PGR de <b>Órion Facilities BH</b>', meta:'Motivo: documento fora da vigência'},
+    {q:'09/09/2026 14:05', tipo:'Aprovação', cls:'ok', quem:'Fiscal · João', txt:'<b>Aprovou</b> cadastro de <b>Vega Inspeções</b>', meta:'Segue para análise financeira'}
+  ];
+  function render(){
+    const ft=document.getElementById('ftipo').value, qq=document.getElementById('q').value.toLowerCase();
+    const rows = EVENTOS.filter(e => (!ft||e.tipo===ft) && (!qq || (e.quem+' '+e.txt+' '+e.meta).toLowerCase().indexOf(qq)>=0));
+    document.getElementById('tl').innerHTML = rows.length ? rows.map(e =>
+      '<div class="tl-item '+e.cls+'"><div class="tl-when">'+e.q+' · '+e.quem+' · <b>'+e.tipo+'</b></div><div class="tl-what">'+e.txt+'</div><div class="tl-meta">'+e.meta+'</div></div>'
+    ).join('') : '<p style="color:var(--mtx-muted)">Nenhum evento para o filtro.</p>';
+  }
+  document.getElementById('ftipo').addEventListener('change',render);
+  document.getElementById('q').addEventListener('input',render);
+  let _t;function mtxToast(m){const t=document.getElementById('toast');t.innerHTML=m;t.classList.add('show');clearTimeout(_t);_t=setTimeout(()=>t.classList.remove('show'),3000);}
+  render();
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multitex — Central de Aprovações (Mockup)</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="cadastro.css">
+  <link rel="stylesheet" href="gestao.css">
+</head>
+<body>
+  <div id="chrome"></div>
+  <div class="page" style="max-width:1120px">
+    <h1>Central de Aprovações <span class="tag">MOCKUP — validação</span></h1>
+    <p class="subtitle">Fila de validação multinível — documentos e notas fiscais (medição) aguardando conferência das áreas responsáveis.</p>
+
+    <div class="list-toolbar">
+      <div class="filters" id="areaTabs"></div>
+      <div class="filters"><select id="ftipo"><option value="">Documentos e notas</option><option>Documento</option><option>Nota fiscal</option></select></div>
+    </div>
+
+    <div class="card"><div class="bd"><table class="tbl" id="tb"></table></div></div>
+  </div>
+  <div class="foot" style="max-width:1120px;margin:0 auto">© 2026 Multitex Logística · Gestão de Fornecedores</div>
+  <div class="toast" id="toast"></div>
+
+  <script src="chrome.js"></script>
+  <script src="aprovacoes.js"></script>
+</body>
+</html>

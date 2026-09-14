@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multitex — Matriz de Exigência (Mockup)</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="cadastro.css">
+  <link rel="stylesheet" href="matriz.css">
+  <link rel="stylesheet" href="gestao.css">
+</head>
+<body>
+  <div id="chrome"></div>
+
+  <div class="page" style="max-width:1180px">
+    <div class="crumb">Gestão de Fornecedores › Configurações › Matriz de Exigência Documental</div>
+    <h1>Matriz de Exigência Documental <span class="tag">MOCKUP — validação</span></h1>
+    <p class="hint" style="margin-top:-.4rem;margin-bottom:1rem">Defina, por <b>categoria</b>, quais documentos são obrigatórios e com qual vigência. Estas regras alimentam automaticamente o cadastro do fornecedor e o portal.</p>
+
+    <div class="mtoolbar">
+      <div class="filters">
+        <select id="fgrupo"><option value="">Todos os grupos</option></select>
+      </div>
+      <div class="filters">
+        <button class="btn-ghost" id="btnCat">+ Nova categoria</button>
+        <button class="btn-primary" id="btnDoc">+ Novo tipo de documento</button>
+      </div>
+    </div>
+
+    <div class="legend">
+      <span><span class="sw" style="background:var(--mtx-amber)"></span><b>Obrigatório</b> para a categoria (clique na célula para alternar)</span>
+      <span><span class="sw" style="background:#fff;border:1.5px solid var(--mtx-line)"></span>Não exigido</span>
+      <span>Nome da categoria, departamento e vigência são <b>editáveis</b> (clique no texto).</span>
+    </div>
+
+    <div class="matrix-wrap"><table class="matrix" id="matrix"></table></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <div id="modalMount"></div>
+
+  <script src="dados.js"></script>
+  <script src="chrome.js"></script>
+  <script src="matriz.js"></script>
+</body>
+</html>

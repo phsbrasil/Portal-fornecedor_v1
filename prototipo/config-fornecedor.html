@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multitex — Configuração por Fornecedor (Mockup)</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="cadastro.css">
+  <link rel="stylesheet" href="gestao.css">
+</head>
+<body>
+  <div id="chrome"></div>
+  <div class="page" style="max-width:1080px">
+    <h1>Configuração por Fornecedor <span class="tag">MOCKUP — validação</span></h1>
+    <p class="subtitle">Parâmetros e particularidades de cada fornecedor — exceções à matriz padrão (incluir/dispensar documentos, vigências específicas).</p>
+
+    <div class="form-card"><div class="hd"><h3><span class="num">•</span> Fornecedor</h3></div>
+      <div class="grid"><div class="fld c8">
+        <label>Selecione o fornecedor</label>
+        <select id="fornSel"><option value="">— Selecione —</option></select>
+      </div>
+      <div class="fld c4"><label>Categoria <span class="ro">define a matriz base</span></label><input id="catInfo" readonly placeholder="—"></div>
+      </div>
+    </div>
+
+    <div id="painel" class="hidden">
+      <div class="form-card"><div class="hd"><h3><span class="num">1</span> Parâmetros</h3></div>
+        <div class="grid">
+          <div class="fld c4"><label>Centro de custo</label><input id="p_cc" placeholder="Ex.: OZ-01"></div>
+          <div class="fld c4"><label>Gestor responsável</label><input id="p_gestor" placeholder="Área / responsável"></div>
+          <div class="fld c4"><label>Tipo de terceiro</label><select id="p_tipo"><option>Contrato (dia a dia)</option><option>Spot / pontual</option></select></div>
+          <div class="fld c4"><label>Condição de pagamento</label><select id="p_cond"><option>À vista</option><option>28 dias</option><option>28/35/42 dias</option><option>Conforme contrato</option></select></div>
+          <div class="fld c4"><label>Antecedência de alerta (dias)</label><input id="p_alerta" value="30"></div>
+          <div class="fld c4"><label>Situação</label><select id="p_sit"><option>Habilitado</option><option>Em análise</option><option>Bloqueado</option></select></div>
+        </div>
+      </div>
+
+      <div class="form-card"><div class="hd"><h3><span class="num">2</span> Documentos aplicáveis (matriz + exceções)</h3>
+        <button class="btn-ghost" id="btnIncluir" style="padding:.4rem .8rem;font-size:.85rem">+ Incluir documento extra</button></div>
+        <div class="reqbox" id="docs"></div>
+      </div>
+
+      <div class="actions"><button class="btn-ghost" id="btnReset">Restaurar padrão da matriz</button>
+        <button class="btn-primary" id="btnSalvar">Salvar configuração</button></div>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+
+  <script src="dados.js"></script>
+  <script src="chrome.js"></script>
+  <script src="config.js"></script>
+</body>
+</html>

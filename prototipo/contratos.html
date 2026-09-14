@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multitex — Contratos (Mockup)</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="cadastro.css">
+  <link rel="stylesheet" href="gestao.css">
+</head>
+<body>
+  <div id="chrome"></div>
+  <div class="page" style="max-width:1120px">
+    <h1>Contratos <span class="tag">MOCKUP — validação</span></h1>
+    <p class="subtitle">Cadastro básico com foco em vigência e alertas. Aditivos e integração TOTVS em ondas futuras.</p>
+
+    <div class="kpis" id="kpis"></div>
+
+    <div class="list-toolbar">
+      <div class="filters">
+        <select id="fstatus"><option value="">Todas as situações</option><option>Vigente</option><option>A vencer</option><option>Vencido</option></select>
+        <input id="q" placeholder="Buscar por fornecedor ou nº…">
+      </div>
+      <button class="btn-primary" id="btnNovo">+ Novo contrato</button>
+    </div>
+
+    <div class="card"><div class="bd"><table class="tbl" id="tb"></table></div></div>
+  </div>
+  <div class="foot" style="max-width:1120px;margin:0 auto">© 2026 Multitex Logística · Gestão de Fornecedores</div>
+  <div class="toast" id="toast"></div>
+
+  <script src="chrome.js"></script>
+  <script src="contratos.js"></script>
+</body>
+</html>

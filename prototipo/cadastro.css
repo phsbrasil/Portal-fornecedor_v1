@@ -1,0 +1,72 @@
+/* ===== Cadastro de Fornecedor (app de gestão) — estilos (mockup Fase 1) =====
+   Usa as variáveis e o base de estilos.css (carregar estilos.css antes). */
+
+.gestao-top{background:var(--mtx-black);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.4rem;position:sticky;top:0;z-index:20}
+.gestao-top .left{display:flex;align-items:center;gap:1rem}
+.gestao-top .ttl{font-weight:700;font-size:.98rem}
+.gestao-top .nav{display:flex;gap:.4rem}
+.gestao-top .nav a{color:#cfcfcf;text-decoration:none;font-weight:600;font-size:.85rem;padding:.4rem .7rem;border-radius:8px}
+.gestao-top .nav a.on,.gestao-top .nav a:hover{background:#2a2a2a;color:var(--mtx-amber)}
+
+.page{max-width:1080px;margin:0 auto;padding:1.4rem}
+.crumb{color:var(--mtx-muted);font-size:.85rem;margin-bottom:.3rem}
+.page h1{font-size:1.5rem;margin:.1rem 0 1rem}
+.page h1 .tag{font-size:.7rem;vertical-align:middle;background:var(--warn-bg);color:var(--warn);padding:.2rem .55rem;border-radius:999px;font-weight:800;margin-left:.5rem}
+
+/* Stepper de aprovação */
+.stepper{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.4rem}
+.step{flex:1;min-width:150px;background:#fff;border:1px solid var(--mtx-line);border-radius:12px;padding:.7rem .9rem;position:relative}
+.step .k{font-size:.72rem;color:var(--mtx-muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.step .v{font-weight:800;margin-top:.15rem}
+.step.done{border-color:var(--ok);background:var(--ok-bg)} .step.done .v{color:var(--ok)}
+.step.current{border-color:var(--mtx-amber);box-shadow:0 0 0 3px var(--mtx-amber-soft)}
+.step.current .v{color:var(--mtx-amber-strong)}
+
+.form-card{background:#fff;border:1px solid var(--mtx-line);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:1.2rem;overflow:hidden}
+.form-card > .hd{padding:.9rem 1.2rem;border-bottom:1px solid var(--mtx-line);display:flex;align-items:center;gap:.6rem;justify-content:space-between;flex-wrap:wrap}
+.form-card > .hd h3{margin:0;font-size:1rem;display:flex;align-items:center;gap:.5rem}
+.form-card > .hd .num{width:24px;height:24px;border-radius:50%;background:var(--mtx-black);color:var(--mtx-amber);display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800}
+.origem{font-size:.72rem;font-weight:700;padding:.2rem .55rem;border-radius:999px}
+.origem.totvs{background:#eae6ff;color:#6b34c9}
+.origem.o365{background:var(--info-bg);color:var(--info)}
+
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;padding:1.2rem}
+.fld{display:flex;flex-direction:column;gap:.35rem}
+.c2{grid-column:span 2}.c3{grid-column:span 3}.c4{grid-column:span 4}.c5{grid-column:span 5}
+.c6{grid-column:span 6}.c7{grid-column:span 7}.c8{grid-column:span 8}.c12{grid-column:span 12}
+.fld label{font-size:.8rem;font-weight:700;color:var(--mtx-ink)}
+.fld label .req{color:var(--danger)}
+.fld label .ro{font-size:.66rem;font-weight:700;color:#6b34c9;background:#eae6ff;padding:.05rem .4rem;border-radius:999px;margin-left:.3rem}
+.fld input,.fld select{border:1.5px solid var(--mtx-line);border-radius:10px;padding:.6rem .7rem;font-size:.92rem;background:#fff;color:var(--mtx-ink);font-family:inherit}
+.fld input:focus,.fld select:focus{outline:0;border-color:var(--mtx-amber);box-shadow:0 0 0 3px var(--mtx-amber-soft)}
+.fld input[readonly]{background:#f6f5f2;color:#555}
+.fld.with-btn{position:relative}
+.inline-btn{display:flex;gap:.5rem}
+.inline-btn input,.inline-btn select{flex:1}
+.btn-busca{background:var(--mtx-black);color:var(--mtx-amber);border:0;border-radius:10px;padding:0 .9rem;font-weight:800;font-size:.85rem;white-space:nowrap}
+.btn-busca:hover{background:#000}
+.hint{font-size:.74rem;color:var(--mtx-muted)}
+
+/* Painel condicional de documentos exigidos */
+.reqbox{padding:1.2rem}
+.reqbox .empty{color:var(--mtx-muted);text-align:center;padding:1.5rem;border:1px dashed var(--mtx-line);border-radius:12px}
+.reqhead{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.8rem}
+.reqhead .count{font-weight:800}
+.reqgrp{margin-bottom:.9rem}
+.reqgrp .gt{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:#fff;background:var(--mtx-black);border-radius:8px;padding:.3rem .6rem;display:inline-block;margin-bottom:.4rem}
+.reqitem{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.5rem .7rem;border:1px solid var(--mtx-line);border-radius:9px;margin-bottom:.35rem}
+.reqitem .nm{font-weight:600;font-size:.9rem}
+.reqitem .mt{font-size:.75rem;color:var(--mtx-muted)}
+.reqitem .vig{font-size:.75rem;font-weight:800;color:var(--warn);background:var(--warn-bg);padding:.2rem .5rem;border-radius:999px;white-space:nowrap}
+
+.actions{display:flex;gap:.8rem;justify-content:flex-end;flex-wrap:wrap;margin-top:.4rem}
+.btn-ghost{background:#fff;border:1.5px solid var(--mtx-line);color:var(--mtx-ink);border-radius:10px;padding:.7rem 1.1rem;font-weight:700}
+.btn-ghost:hover{border-color:var(--mtx-muted)}
+.btn-primary{background:var(--mtx-amber);color:var(--mtx-black);border:0;border-radius:10px;padding:.7rem 1.3rem;font-weight:800}
+.btn-primary:hover{background:var(--mtx-amber-strong)}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--mtx-black);color:#fff;padding:.7rem 1.1rem;border-radius:10px;font-size:.9rem;opacity:0;transition:.25s;z-index:60;box-shadow:var(--shadow)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast b{color:var(--mtx-amber)}
+
+@media(max-width:760px){.grid{grid-template-columns:repeat(4,1fr)}.c2,.c3,.c4,.c5,.c6,.c7,.c8{grid-column:span 4}}
