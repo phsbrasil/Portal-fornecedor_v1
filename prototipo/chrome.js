@@ -16,7 +16,7 @@
   mount.innerHTML =
     '<div class="gestao-top">' +
       '<div class="left">' +
-        '<a href="hub.html" class="mtx-logo small" style="text-decoration:none"><span class="badge"><span class="star">★</span>MULTI<b>TEX</b></span></a>' +
+        '<a href="hub.html" style="text-decoration:none;display:flex"><img src="img/multitex-dark.png" alt="Multitex Logística" class="mtx-mark small"></a>' +
         '<span class="ttl">Gestão de Fornecedores</span>' +
       '</div>' +
       '<div class="nav">' +

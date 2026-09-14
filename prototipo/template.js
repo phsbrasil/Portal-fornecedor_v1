@@ -10,17 +10,15 @@ window.TPL = (function () {
   };
 
   function logo(small) {
-    return '<span class="mtx-logo ' + (small ? 'small' : '') + '">' +
-      '<span class="badge"><span class="star">★</span>MULTI<b>TEX</b></span></span>';
+    return small
+      ? '<img src="img/multitex-dark.png" alt="Multitex Logística" class="mtx-mark small">'
+      : '<img src="img/multitex.png" alt="Multitex Logística" class="mtx-mark">';
   }
 
   function loginView() {
     return '' +
     '<div class="login-wrap">' +
-      '<div class="login-art">' +
-        '<span class="tri t1"></span><span class="tri t2"></span><span class="tri t3"></span>' +
-        '<span class="sun"></span><span class="rail"></span>' +
-      '</div>' +
+      '<div class="login-art"></div>' +
       '<div class="login-panel"><div class="login-card">' +
         '<div style="text-align:center">' + logo(false) +
           '<div class="mtx-tagline">Soluções logísticas com tecnologias inovadoras</div></div>' +

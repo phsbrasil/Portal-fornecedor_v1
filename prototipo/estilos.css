@@ -32,13 +32,16 @@ button{font-family:inherit;cursor:pointer}
 .mtx-logo .badge .star{position:absolute;top:-9px;right:-6px;color:var(--mtx-amber);font-size:1rem}
 .mtx-logo .badge b{color:var(--mtx-amber)}
 .mtx-logo .badge::before{content:none!important}
+/* Logo oficial (imagem) */
+.mtx-mark{height:52px;width:auto;display:block;object-fit:contain}
+.mtx-mark.small{height:34px}
+.login-card .mtx-mark{margin:0 auto}
 .mtx-logo.small .badge{font-size:1rem;padding:.28rem .55rem;border-radius:8px}
 .mtx-tagline{font-size:.62rem;letter-spacing:.16em;color:var(--mtx-muted);font-weight:700;margin-top:.4rem;text-transform:uppercase}
 
 /* ================= LOGIN ================= */
 .login-wrap{min-height:100vh;display:grid;grid-template-columns:minmax(0,44%) 1fr}
-.login-art{position:relative;overflow:hidden;background:
-  linear-gradient(150deg,#2a1c10 0%,#7a3f10 32%,#e07b12 58%,#f6a623 78%,#ffd17a 100%);}
+.login-art{position:relative;overflow:hidden;background:#f4f4f2 url("img/hex.jpg") center/cover no-repeat}
 .login-art .sun{position:absolute;left:22%;top:52%;width:230px;height:230px;border-radius:50%;
   background:radial-gradient(circle,#fff7e6 0%,#ffd98a 35%,rgba(245,166,35,0) 70%);filter:blur(2px)}
 .login-art .tri{position:absolute;opacity:.92}
