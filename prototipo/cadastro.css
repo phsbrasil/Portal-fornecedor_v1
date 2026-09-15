@@ -1,14 +1,14 @@
 /* ===== Cadastro de Fornecedor (app de gestão) — estilos (mockup Fase 1) =====
    Usa as variáveis e o base de estilos.css (carregar estilos.css antes). */
 
-.gestao-top{background:var(--mtx-black);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.4rem;position:sticky;top:0;z-index:20}
+.gestao-top{background:var(--mtx-black);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:.7rem clamp(1rem,3vw,2.75rem);position:sticky;top:0;z-index:20}
 .gestao-top .left{display:flex;align-items:center;gap:1rem}
 .gestao-top .ttl{font-weight:700;font-size:.98rem}
 .gestao-top .nav{display:flex;gap:.4rem}
 .gestao-top .nav a{color:#cfcfcf;text-decoration:none;font-weight:600;font-size:.85rem;padding:.4rem .7rem;border-radius:8px}
 .gestao-top .nav a.on,.gestao-top .nav a:hover{background:#2a2a2a;color:var(--mtx-amber)}
 
-.page{max-width:1080px;margin:0 auto;padding:1.4rem}
+.page{max-width:none;width:100%;margin:0;padding:1.4rem clamp(1rem,3vw,2.75rem)}
 .crumb{color:var(--mtx-muted);font-size:.85rem;margin-bottom:.3rem}
 .page h1{font-size:1.5rem;margin:.1rem 0 1rem}
 .page h1 .tag{font-size:.7rem;vertical-align:middle;background:var(--warn-bg);color:var(--warn);padding:.2rem .55rem;border-radius:999px;font-weight:800;margin-left:.5rem}
